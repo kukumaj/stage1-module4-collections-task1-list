@@ -7,7 +7,7 @@ import java.util.List;
 
 public class ListSorter {
     public void sort(List<String> sourceList) {
-        ListComparator  listComparator = new ListComparator();
+        ListComparator listComparator = new ListComparator();
         sourceList.sort(listComparator);
     }
 }
@@ -17,8 +17,8 @@ class ListComparator implements Comparator<String> {
     public int compare(String a, String b) {
         int firstElement = Integer.parseInt(a);
         int secondElement = Integer.parseInt(b);
-        int resultOne = (int) (5 * Math.pow(firstElement,2)+3);
-        int resultTwo = (int) (5 * Math.pow(secondElement,2)+3);
-        return resultOne > resultTwo ? 1 : -1;
+        int resultOne = (int) (5 * Math.pow(firstElement, 2) + 3);
+        int resultTwo = (int) (5 * Math.pow(secondElement, 2) + 3);
+        return resultOne > resultTwo ? 1 : resultOne == resultTwo && secondElement < 0 ? 0 : -1;
     }
 }
